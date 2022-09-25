@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html lang="jp">
-
-
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="css.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <script type="text/javascript" src="script.js"></script>
     <title>来校者企画投票用フォーム</title>
 </head>
 
 <body onload="doget();">
     <h1>来校者企画投票用フォーム</h1>
     <p class="explanation"></p>
-    <form action = "https://docs.google.com/forms/u/0/d/e/1FAIpQLSc5ZnQECFjGpCWylBjwbhiXEaWBd2OwMPpZWp-U3kKm6o3HkA/formResponse" method="post">
+    <form action = "https://docs.google.com/forms/u/0/d/e/1FAIpQLSc5ZnQECFjGpCWylBjwbhiXEaWBd2OwMPpZWp-U3kKm6o3HkA/formResponse" id="main" method="post">
     <div class="Serial">
         <label class="Serial">シリアルコードを入力してください</label>
         <br>
@@ -252,28 +253,5 @@
         </div>
         
     </form>
-    <script>
-        let submitted = false;
-        const cookies = document.cookie;
-        let value = cookies.indexOf("answer=")
-
-        function doget() {
-            document.cookie = "name=Guest";
-            document.cookie = "index=0";
-            if(value >= 0){
-                document.getElementById("submit").style.display = 'none'
-                document.getElementById("alread").style.display = 'inline'
-            }else {
-                document.getElementById("submit").style.display = 'inline'
-                document.getElementById("already").style.display = 'none'
-            }
-        }
-    
-        const page_transition = function () {
-            if(submitted){
-                document.cookie = "answer=already";
-            }
-        }
-    </script> 
 </body>
 </html>
