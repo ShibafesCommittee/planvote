@@ -530,32 +530,18 @@
         let json = JSON.stringify(alreadyans, undefined, 1);
         answernum += 1;
 
-        let flag1 = Serialans.indexOf(Serial);
+        let flag = Serialans.indexOf(Serial);
         localStorage.setItem("test", flag1);
 
-        let flag2 = 0
-
-        if(Answer === ""){
-            flag2 = -1;
-        }
-        
-        if(flag1 === -1 && flag2 === -1){
-            let flag = 0;
-        }
-
-        if(flag === 0){
+        if(flag === -1){
             //ローカルストレージに代入
             localStorage.setItem("answer", json);
             localStorage.setItem("answernum", answernum);
             //送信
             document.mainform.submit(); 
-        }else if(flag1 !== -1){
+        }else{
             alert("入力済みのシリアルコードです");
             return false;
-        }else if(flag2 !== -1){
-            alert("投票する企画名を選択してください");
-            return false;
-
         }
         nowanswer = [];
     }
