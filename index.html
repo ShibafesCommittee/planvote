@@ -36,8 +36,16 @@
         font-size: 150%;
         font-weight: bold;
         text-align: center;
+        padding: 1rem 1rem 1rem;
+        border: 2px solid #000;
     }
 
+    .Serial {
+        border-left: 3px solid #B54A4A;
+        padding: 1rem 1rem 0 ;
+        margin: 0 0 1rem
+    }
+    
     .radio-inline__input {
         clip: rect(1px, 1px, 1px, 1px);
         position: absolute !important;
@@ -176,7 +184,7 @@
     }
 
     .number {
-        margin: 0.5rem 1rem 1rem;
+        margin: 0.5rem 0 1rem;
         display: inline-block;
         width: 18em;
         max-width: 100%;
@@ -206,8 +214,11 @@
 </head>
 
 <body id="body">
-    <h1>来校者企画投票用サイト</h1>
+    <h1>企画投票用フォーム</h1>
     <form action = "https://docs.google.com/forms/u/0/d/e/1FAIpQLSc5ZnQECFjGpCWylBjwbhiXEaWBd2OwMPpZWp-U3kKm6o3HkA/formResponse" id="main" name="mainform" method="post" onsubmit="comet(); return false;">
+        <div class="a">
+            <p>本日は芝生祭にご来場いただき誠にありがとうございます。<br>本フォームでは、ご来場いただいた皆様に一番良いと思った企画団体に投票していただくものとなっています。<br>また、投票の際には受付で配布されたシリアルコードが必要になりますので、ご確認してください。</p>
+        </div>
         <div class="Serial">
             <label class="serialname">シリアルコードを入力してください</label><br>
             <input id="Serialname" class="number" type="text" name="entry.1905722453" placeholder="半角数字７桁" minlength="7" maxlength="7" pattern="^[0-9]+$"  required>
@@ -217,7 +228,7 @@
             <details class="Accordion" open>
                 <summary class="Accordion__Summary">１階<span class="icon"></span></summary>
                 <div class="Accordion__Content">
-                    <input id="item-1" class="radio-inline__input" type="radio" name="entry.433827081" required value="理科部 We are scientist!" />
+                    <input id="item-1" class="radio-inline__input" type="radio" name="entry.433827081" required value="理科部 We are scientist!"/>
                     <label class="radio-inline__label" for="item-1">
                         理科部 We are scientist!
                     </label>
